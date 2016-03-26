@@ -11,8 +11,8 @@ def create(request):
     if request.method == 'POST':
         title = request.POST.get('title', '')
         if title != '':
-            ChatRoom.objects.create(title=title)
-            return redirect(index)
+            chat_room = ChatRoom.objects.create(title=title)
+            return redirect(chat, room_id=chat_room.id)
     return render(request, "chat/create.html")
 
 
