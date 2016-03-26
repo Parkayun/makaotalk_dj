@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block body %}
+    <h1>Create Channel</h1>
+    <form method="post" action=".">
+        <span>Title:</span>
+        <input type="text" name="title">
+        {% csrf_token %}
+        <input type="submit">
+    </form>
+{% endblock %}
