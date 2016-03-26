@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 
 {% block body %}
-    <h1>Hello World</h1>
+    <h1>Channels</h1>
+    {% if chat_rooms %}
+        <ul>
+        {%  for room in chat_rooms %}
+            <li><a href="/chat/{{ room.id }}/">{{  room.title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    <a href="/chat/create/">Create Channel</a>
 {% endblock %}
