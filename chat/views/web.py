@@ -3,6 +3,10 @@ from django.shortcuts import render, redirect
 from ..models import ChatRoom
 
 
+def chat(request, room_id):
+    return render(request, "chat/chat.html")
+
+
 def create(request):
     if request.method == 'POST':
         title = request.POST.get('title', '')
